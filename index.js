@@ -20,7 +20,9 @@ app.post('/github', (req, res) => {
     cd ..
     yarn install
     forever start -c 'yarn start'    
-  `)
+  `, function(err,data,stderr){
+    console.log(data);
+  })
   res.send('all good here');
 });
 
