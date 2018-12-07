@@ -32,7 +32,7 @@ app.post('/github', (req, res) => {
 app.get('/force/reset/server/:id',(req,res)=>{
   cmd.get(`
     forever stopall
-    forever start -c "yarn start" ~/${req.params.id}
+    forever start ~/${req.params.id}/server.js
   `,function(err,data,stderr){
     if(err) console.log(err);
     console.log(data);
