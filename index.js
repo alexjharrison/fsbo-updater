@@ -20,7 +20,7 @@ app.post('/github', (req, res) => {
       yarn build
       cd ..
       yarn install
-      forever start -c "yarn start" ./
+      forever start server.js
     `, function(err,data,stderr){
       if(err) console.log(err);
       console.log(data);
