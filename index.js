@@ -9,7 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const port = 3001;
 
 app.post('/github', (req, res) => {
-  console.log(req.body);
+  const payload = JSON.parse(req.body.payload);
+  console.log(payload.zen);
   res.send('all good here');
 });
 
