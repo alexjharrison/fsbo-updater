@@ -13,7 +13,7 @@ app.post('/github', (req, res) => {
   if(payload.zen){
     const repo = payload.repository.name;
     cmd.get(`
-      forever stopall
+      forever stop 1
       cd ~/${repo}/client
       git pull
       yarn install
