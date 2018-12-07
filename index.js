@@ -10,7 +10,8 @@ const port = 3001;
 
 app.post('/github', (req, res) => {
   const payload = JSON.parse(req.body.payload);
-  if(payload.zen){
+  console.log(payload);
+  if(payload.ref){
     const repo = payload.repository.name;
     cmd.get(`
       forever stop 1
