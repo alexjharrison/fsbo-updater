@@ -8,11 +8,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const port = 3001;
 
-app.post('/', (req, res) => {
+app.post('/github', (req, res) => {
   console.log(req.body);
   res.send('all good here');
 });
 
-app.get('/', (req, res) => res.send('all good blah'));
+app.get('/github', (req, res) => res.send('all good blah'));
 
 app.listen(port, () => console.log('app started on port ' + port));
