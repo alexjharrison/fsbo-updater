@@ -13,4 +13,6 @@ app.post('/', (req, res) => {
   res.send('all good here');
 });
 
+app.get('/', (req, res) => res.send('all good blah'));
+
 app.listen(port, () => console.log('app started on port ' + port));
