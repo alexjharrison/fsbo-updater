@@ -10,7 +10,17 @@ const port = 3001;
 
 app.post('/github', (req, res) => {
   const payload = JSON.parse(req.body.payload);
-  console.log(payload.zen);
+  const repo = payload.repository.name;
+  cmd.get(`
+    forever stopall
+    cd ~/${repo}/build
+    git pull
+    yarn install
+    yarn build
+    cd ..
+    yarn install
+    forever start -c 'yarn start'    
+  `)
   res.send('all good here');
 });
 
