@@ -13,7 +13,7 @@ app.post('/github', (req, res) => {
   const repo = payload.repository.name;
   cmd.get(`
     forever stopall
-    cd ~/${repo}/build
+    cd ~/${repo}/client
     git pull
     yarn install
     yarn build
