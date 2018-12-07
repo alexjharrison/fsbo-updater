@@ -31,7 +31,7 @@ app.post('/github', (req, res) => {
 
 app.get('/force/reset/server/:id',(req,res)=>{
   cmd.get(`
-    forever stopall
+    forever stop 1
     forever start ~/${req.params.id}/server.js
   `,function(err,data,stderr){
     if(err) console.log(err);
